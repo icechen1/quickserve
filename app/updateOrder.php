@@ -6,6 +6,6 @@
 	$item=$_POST['ItemID'];
 	
 	$menu=mysqli_query($link,"INSERT INTO orders('OrderDate','ItemID','UserID') VALUES (".$date.", ".$item.",".$userID.")");
-
+	
 	
 ?>

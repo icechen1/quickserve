@@ -1,0 +1,4 @@
+getMenu() -> Parameter: Post['RestID']
+		  -> Response: JSON: {ItemName,ItemDesc,ImageURL,Category} (Sorted by CategoryID #)
+updateOrder() -> Parameter: Post['UserID'],$Post['ItemID']
+		  -> Response: Inserts order into database
