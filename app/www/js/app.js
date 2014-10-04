@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/nearby",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/nearby_details.html"
         }
       }
     })
