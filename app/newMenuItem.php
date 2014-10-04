@@ -2,8 +2,11 @@
 	$link=mysqli_connnect("host","user","pass","db");
 	
 	$RestID=$_POST['RestID'];
-	$itemID=$_POST['itemID'];
+	$ItemDescription=$_POST['itemDesc'];
+	$ImageURL=$_POST['imageURL'];
+	$CategoryName=$_POST['CategoryName'];
+	$ItemName=$_POST['ItemName'];
+	$Price=$_POST['Price'];
 	
-	$menu=mysqli_query($link,"SELECT I.ItemName,I.ItemDescription,I.ImageURL, C.CategoryName FROM items AS I INNER JOIN categories AS C ON I.CategoryID=C.CategoryID WHERE RestaurantID=".$RestID." ORDER BY CategoryID");
-	
+	$menu=mysqli_query($link,"INSERT INTO items ('RestID, ItemDescription,  ImageURL,  CategoryName,  ItemName,  Price') VALUES (".$RestID.",".  $ItemDescription.",".$ImageURL."," . $CategoryName."," .$ItemName.",". $Price.")");
 ?>

@@ -7,3 +7,9 @@ updateOrder() -> Parameter: Post['token']
 generate_token -> Parameter: $POST['UserID'],$POST['ItemID']
 		  -> Response: token (note that token=OrderID)
 		  -> Purpose: Inserts order into database. Confirms the server has checked out the order
+removeMenuItem -> Parameter: $POST['ItemID']
+		  -> Response: 
+		  -> Purpose: Removes an item from the menu
+newMenuItem -> Parameter: $POST['RestID'],$POST['itemDesc'],$POST['imageURL'],$POST['CategoryName'],$POST['ItemName'],$POST['Price'];
+		  -> Response: 
+		  -> Purpose: Adds a new menu item
