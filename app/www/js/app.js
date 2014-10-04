@@ -63,7 +63,6 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
         }
       }
     })
-    })
         .state('app.scanned', {
       url: "/scanned",
       views: {
@@ -71,7 +70,6 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
           templateUrl: "templates/scanned.html"
         }
       }
-    })
     })
         .state('app.barcode', {
       url: "/barcode",
