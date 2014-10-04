@@ -1,4 +1,9 @@
 getMenu() -> Parameter: Post['RestID']
-		  -> Response: JSON: {ItemName,ItemDesc,ImageURL,Category} (Sorted by CategoryID #)
-updateOrder() -> Parameter: Post['UserID'],$Post['ItemID']
-		  -> Response: Inserts order into database
+		  -> Response: JSON: {ItemID,ItemName,ItemDesc,ImageURL,Category} (Sorted by CategoryID #)
+		  -> Purpose: retrieve the menu for ordering
+updateOrder() -> Parameter: Post['token']
+		  -> Response: 
+		  -> Purpose: Inserts order into database. Confirms the server has checked out the order
+generate_token -> Parameter: $POST['UserID'],$POST['ItemID']
+		  -> Response: token (note that token=OrderID)
+		  -> Purpose: Inserts order into database. Confirms the server has checked out the order
