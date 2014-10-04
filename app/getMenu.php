@@ -11,4 +11,6 @@
 		$i=$i+1;
 	}
 	
+	$s=json_encode($row);
+	echo $s;
 ?>
