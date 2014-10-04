@@ -1,4 +1,21 @@
 getMenu() -> Parameter: Post['RestID']
-		  -> Response: JSON: {ItemName,ItemDesc,ImageURL,Category} (Sorted by CategoryID #)
-updateOrder() -> Parameter: Post['UserID'],$Post['ItemID']
-		  -> Response: Inserts order into database
+		  -> Response: JSON: {ItemID,ItemName,ItemDesc,ImageURL,Category} (Sorted by CategoryID #)
+		  -> Purpose: retrieve the menu for ordering
+updateOrder() -> Parameter: Post['token']
+		  -> Response: 
+		  -> Purpose: Inserts order into database. Confirms the server has checked out the order
+generate_token -> Parameter: $POST['UserID'],$POST['ItemID']
+		  -> Response: token (note that token=OrderID)
+		  -> Purpose: Inserts order into database. Confirms the server has checked out the order
+removeMenuItem -> Parameter: $POST['ItemID']
+		  -> Response: 
+		  -> Purpose: Removes an item from the menu
+newMenuItem -> Parameter: $POST['RestID'],$POST['itemDesc'],$POST['imageURL'],$POST['CategoryName'],$POST['ItemName'],$POST['Price']
+		  -> Response: 
+		  -> Purpose: Adds a new menu item
+favourite -> Parameter: $POST['UserID'],$POST['token']
+		  -> Response: 
+		  -> Purpose: Adds the token into the favourite list
+favourite -> Parameter: $POST['UserID']
+		  -> Response: JSON: {orderDate, ItemName, price}
+		  -> Purpose: Retrieves past orders

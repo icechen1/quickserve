@@ -1,11 +1,10 @@
 <?php
 	$link=mysqli_connnect("host","user","pass","db");
 	
-	$userID=$_POST['UserID'];
-	$date=time();
-	$item=$_POST['ItemID'];
+	$token=$_POST['token'];
 	
-	$menu=mysqli_query($link,"INSERT INTO orders('OrderDate','ItemID','UserID') VALUES (".$date.", ".$item.",".$userID.")");
+	$=mysqli_query($link,"UPDATE orders SET isComplete="."1"." WHERE orders.OrderID=".$token);
+	
 	
 	
 ?>
