@@ -47,6 +47,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.restaurant_menu', {
+      url: "/restaurant_menu",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/restaurant_menu.html"
+        }
+      }
+    })
+        .state('app.confirm', {
+      url: "/confirm",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/confirm.html"
+        }
+      }
+    })
+    })
+        .state('app.scanned', {
+      url: "/scanned",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/scanned.html"
+        }
+      }
+    })
+    })
+        .state('app.barcode', {
+      url: "/barcode",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/barcode.html"
+        }
+      }
+    })
     .state('app.history', {
       url: "/history",
       views: {
