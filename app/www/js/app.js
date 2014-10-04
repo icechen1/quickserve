@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
         }
       }
     })
-        .state('app.confirm', {
+    .state('app.confirm', {
       url: "/confirm",
       views: {
         'menuContent' :{
@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
         }
       }
     })
-        .state('app.scanned', {
+    .state('app.scanned', {
       url: "/scanned",
       views: {
         'menuContent' :{
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
         }
       }
     })
-        .state('app.barcode', {
+    .state('app.barcode', {
       url: "/barcode",
       views: {
         'menuContent' :{
