@@ -7,7 +7,7 @@
 <div class="list">
 
   <div class="item item-icon-left item-divider" >
-    <i class="icon ion-coffee"></i>
+    <i class="icon ion-fork"></i>
     Appetizers
   </div>
 
