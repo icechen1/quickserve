@@ -35,8 +35,8 @@ io.on('connection', function(socket){
     socket.on('scanned', function(msg){
         console.log('scanned received'); 
         console.log(msg); 
-        socket.emit("scannedToken",msg);
-        console.log('scannedToken emit'); 
+        socket.emit('scanned_token',msg);
+        console.log('scanned_token emit'); 
     });
 }); /*
 app.listen(app.get('port'), function() {

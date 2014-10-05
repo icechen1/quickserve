@@ -106,8 +106,7 @@ angular.module('starter.controllers', [])
 })
 .controller('BarcodeCtrl', function($scope,$stateParams,appSocket) {
     $scope.payload = $stateParams.barcodeId;
-    $scope.$parent.appSocket.emit('onBarCode', $scope.menu);
-    $scope.$parent.appSocket.on('scannedToken', function(msg){
+    $scope.$parent.appSocket.addListener('scanned_token', function(msg){
         alert("YAY");
         console.log("YAY");
     });
