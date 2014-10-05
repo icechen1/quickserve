@@ -1,6 +1,6 @@
 <?php
 	$link=parse_url(getenv("CLEARDB_DATABASE_URL"));
-
+	header('Acess-Control-Allow-Origin: *');
     $server = $url["host"];
     $username = $url["user"];
     $password = $url["pass"];
