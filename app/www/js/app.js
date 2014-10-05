@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       url: "/restaurant_menu",
       views: {
         'menuContent' :{
-          templateUrl: "templates/restaurant_menu.html",
+          templateUrl: "templates/restaurant_menu.php",
           controller: 'MenuCtrl'
         }
       }
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       url: "/confirm",
       views: {
         'menuContent' :{
-          templateUrl: "templates/confirm.html"
+          templateUrl: "templates/confirm.php"
         }
       }
     })
@@ -86,6 +86,15 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       views: {
         'menuContent' :{
           templateUrl: "templates/history.php",
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
+    .state('app.phptest', {
+      url: "/phptest",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/phptest.php",
           controller: 'PlaylistsCtrl'
         }
       }

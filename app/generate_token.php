@@ -1,9 +1,9 @@
 <?php
 	$link=mysqli_connnect("host","user","pass","db");
 	
-	$userID=$_GET['UserID'];
+	$userID=$_POST['UserID'];
 	$date=time();
-	$item=$_GET['ItemID'];
+	$item=$_POST['ItemID'];
 	
 	$t=mysqli_query($link,"SELECT Max(OrderID)+1 FROM orders");
 	foreach($item)

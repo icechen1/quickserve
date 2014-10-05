@@ -3,14 +3,20 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     <button class="button button-clear button-positive" ng-click="send()">Next</button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" style="background: url('img/backtest.jpg') center">
       
 <div class="list">
 
+<<<<<<< HEAD:app/www/templates/restaurant_menu.html
 <div ng-repeat="category in menu">
   <div class="item item-icon-left item-divider">
     <i class="icon ion-coffee"></i>
       {{category.name}}
+=======
+  <div class="item item-icon-left item-divider" >
+    <i class="icon ion-fork"></i>
+    Appetizers
+>>>>>>> 0e2ec063f1b72ba572576b07357d6cfc9778444c:app/www/templates/restaurant_menu.php
   </div>
 
     <div class="item" ng-repeat="item in category.items">
@@ -91,6 +97,11 @@
         </div>
     </div>
 
+<button class="button button-full button-calm">
+  Place Order
+</button>
+
+    
 </div>
   </ion-content>
 </ion-view>
