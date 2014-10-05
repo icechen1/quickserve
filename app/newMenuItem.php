@@ -1,12 +1,11 @@
 <?php
 	$link=mysqli_connnect("host","user","pass","db");
 	
-	$RestID=$_POST['RestID'];
 	$ItemDescription=$_POST['itemDesc'];
 	$ImageURL=$_POST['imageURL'];
-	$CategoryName=$_POST['CategoryName'];
+	$CategoryName=$_POST['CategoryID'];
 	$ItemName=$_POST['ItemName'];
 	$Price=$_POST['Price'];
 	
-	$menu=mysqli_query($link,"INSERT INTO items ('RestID, ItemDescription,  ImageURL,  CategoryName,  ItemName,  Price') VALUES (".$RestID.",".  $ItemDescription.",".$ImageURL."," . $CategoryName."," .$ItemName.",". $Price.")");
+	$menu=mysqli_query($link,"INSERT INTO items (ItemDescription,  ImageURL,  CategoryID,  ItemName,  Price) VALUES (".$ItemDescription.",".$ImageURL."," . $CategoryID."," .$ItemName.",". $Price.")");
 ?>

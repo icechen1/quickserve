@@ -10,7 +10,7 @@ generate_token -> Parameter: $POST['UserID'],$POST['ItemID']
 removeMenuItem -> Parameter: $POST['ItemID']
 		  -> Response: 
 		  -> Purpose: Removes an item from the menu
-newMenuItem -> Parameter: $POST['RestID'],$POST['itemDesc'],$POST['imageURL'],$POST['CategoryName'],$POST['ItemName'],$POST['Price']
+newMenuItem -> Parameter: $POST['itemDesc'],$POST['imageURL'],$POST['CategoryID'],$POST['ItemName'],$POST['Price']
 		  -> Response: 
 		  -> Purpose: Adds a new menu item
 favourite -> Parameter: $POST['UserID'],$POST['token']

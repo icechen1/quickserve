@@ -3,6 +3,7 @@
 	
 	$itemID=$_POST['itemID'];
 	
-	$menu=mysqli_query($link,"DELETE FROM items WHERE itemID=".$itemID);
+	mysqli_query($link,"DELETE FROM items WHERE itemID=".$itemID);
+	mysqli_query($link,"DELETE FROM restaurants_items WHERE itemID=".$itemID);
 	
 ?>
