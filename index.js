@@ -7,7 +7,7 @@ var id = 0;
 
 app.set('port', (process.env.PORT || 5000));
 app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "localhost:8100");
+  res.header("Access-Control-Allow-Origin", "http://localhost:8100");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
  });
