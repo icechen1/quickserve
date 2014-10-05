@@ -105,18 +105,10 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode','b
   $urlRouterProvider.otherwise('/app/nearby');
 
 }).factory('appSocket', function (socketFactory) {
-      var myIoSocket = io.connect('quickserve.herokuapp.com:80');
+      var myIoSocket = io.connect('http://quickserve.herokuapp.com:80');
 
       appSocket = socketFactory({
         ioSocket: myIoSocket
       });
         return appSocket;
     });
-
-document.addEventListener('deviceready', function() {
-    socket.on('connect', function() {
-      socket.on('text', function(text) {
-        alert(text);
-       });
-     });
-});

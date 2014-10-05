@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout,appSocket) {
+    $scope.appSocket = appSocket;
   //Grab our userID
   try{
     $scope.phoneID = device.uuid;
@@ -46,7 +47,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('MenuCtrl', function($scope,$state,$location,$http,appSocket) {
+.controller('MenuCtrl', function($scope,$state,$location,$http) {
     //placeholder
     $scope.menu = [{ name: 'Category 1', 
         items:[{
@@ -96,15 +97,15 @@ angular.module('starter.controllers', [])
     //Post the order to the server
     $scope.send = function(){
         console.log($scope.menu);
-        appSocket.emit('sendMenu', $scope.menu);
-        appSocket.on('getToken', function(msg){
+        $scope.$parent.appSocket.emit('sendMenu', $scope.menu);
+        $scope.$parent.appSocket.on('getToken', function(msg){
             $location.url("/app/barcode/"+msg);
         });
     };
 })
 .controller('BarcodeCtrl', function($scope,$stateParams) {
     $scope.payload = $stateParams.barcodeId;
-    appSocket.on('scanned', function(msg){
+    $scope.$parent.appSocket.on('scannedToken', function(msg){
         alert("YAY");
     });
 })
