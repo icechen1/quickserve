@@ -2,16 +2,12 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   //Grab our userID
-    if(window.cordova)
-    cordova.plugins.MacAddress.getMacAddress(
-        function(macAddress) {
-            $scope.phone_id = macAddress;
-            alert(phone_id);
-        },function(fail) {
-            $scope.phone_id = -1;
-        }
-    );
-    
+  try{
+    $scope.phoneID = device.uuid;
+    alert($scope.phoneID);
+  }catch(err){
+      
+  }
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -60,36 +56,76 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('MenuCtrl', function($scope,$state) {
+.controller('MenuCtrl', function($scope,$state,$location,$http) {
     //placeholder
-    $scope.menu = [
-    { category: 'Category 1', 
+    $scope.menu = [{ name: 'Category 1', 
         items:[{
-            name: "Test"
+            name: "Test",
+            price: "160$",
+            id: 123213
         },{
-            name: "Test 2"
+            name: "Test 2",
+            price: "100$",
+            id: 123212
         },{
-            name: "Test 3"
+            name: "Test 3",
+            price: "100$",
+            id: 123214
         }]
-    },{category: 'Category 2', 
+    },{name: 'Category 2', 
         items:[{
-            name: "Test"
+            name: "Test",
+            price: "100$",
+            id: 223213
         },{
-            name: "Test 2"
+            name: "Test 2",
+            price: "100$",
+            id: 223212
         },{
-            name: "Test 3"
+            name: "Test 3",
+            price: "100$",
+            id: 223210
         }]
-    },{category: 'Category 3', 
+    },{name: 'Category 3', 
         items:[{
-            name: "Test"
+            name: "Test",
+            price: "100$",
+            id: 323213
         },{
-            name: "Test 2"
+            name: "Test 2",
+            price: "100$",
+            id: 323216
         },{
-            name: "Test 3"
+            name: "Test 3",
+            price: "100$",
+            id: 323211
         }]
     }
-  ];
+     ];
+    
+    //Post the order to the server
+    $scope.send = function(){
+        console.log($scope.menu);
+        $http.get('http://quickserve.herokuapp.com/generate_token.php', $scope.order).success(function(data, status, headers, config){
+                $location.url("/barcode/"+data);
+        });
+    };
 })
+//TODO Refactor ordering into a service
+.service('orderService', function() {
+  var orderList = [];
+    
+  var addProduct = function(newObj) {
+      orderList.push(newObj);
+  }
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+  var getProducts = function(){
+      return orderList;
+  }
+
+  return {
+    addProduct: addProduct,
+    getProducts: getProducts
+  };
+
 });
