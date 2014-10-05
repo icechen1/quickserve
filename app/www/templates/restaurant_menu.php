@@ -7,16 +7,10 @@
       
 <div class="list">
 
-<<<<<<< HEAD:app/www/templates/restaurant_menu.html
 <div ng-repeat="category in menu">
   <div class="item item-icon-left item-divider">
     <i class="icon ion-coffee"></i>
       {{category.name}}
-=======
-  <div class="item item-icon-left item-divider" >
-    <i class="icon ion-fork"></i>
-    Appetizers
->>>>>>> 0e2ec063f1b72ba572576b07357d6cfc9778444c:app/www/templates/restaurant_menu.php
   </div>
 
     <div class="item" ng-repeat="item in category.items">

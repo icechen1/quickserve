@@ -5,7 +5,9 @@
   <ion-content class="has-header">
     <h1 align="center">Test the PHP Here</h1>
       
-      
+      <?php
+        echo "hi";
+        ?>
       
   </ion-content>
 </ion-view>
