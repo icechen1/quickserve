@@ -105,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode','b
   $urlRouterProvider.otherwise('/app/nearby');
 
 }).factory('appSocket', function (socketFactory) {
-      var myIoSocket = io.connect('localhost:3000');
+      var myIoSocket = io.connect('http://quickserve.herokuapp.com:3000');
 
       appSocket = socketFactory({
         ioSocket: myIoSocket
