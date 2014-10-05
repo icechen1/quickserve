@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       url: "/scan",
       views: {
         'menuContent' :{
-          templateUrl: "templates/scan.html"
+          templateUrl: "templates/scan.html",
+          controller: 'ScanRestaurantCtrl'
         }
       }
     })

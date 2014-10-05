@@ -1,6 +1,16 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+  //Grab our userID
+    window.MacAddress.getMacAddress(
+        function(macAddress) {
+            $scope.phone_id = macAddress;
+            alert(phone_id);
+        },function(fail) {
+            $scope.phone_id = -1;
+        }
+    );
+    
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -21,16 +31,21 @@ angular.module('starter.controllers', [])
     $scope.scanModal.show();
   };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
+  $scope.scan = function(){
+    //Scan QR Code to get to restaurant page
+    cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          //QR Code found... check for validity
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+      }, 
+      function (error) {
+          alert("Scanning failed: " + error);
+      }
+    );
+    };
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -44,20 +59,8 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('ScannerCtrl', function($scope) {
-    $scope.scan = function(pass,fail){
-        cordova.plugins.barcodeScanner.scan(
-          function (result) {
-              alert("We got a barcode\n" +
-                    "Result: " + result.text + "\n" +
-                    "Format: " + result.format + "\n" +
-                    "Cancelled: " + result.cancelled);
-          }, 
-          function (error) {
-              alert("Scanning failed: " + error);
-          }
-       );
-    }
+.controller('ScanRestaurantCtrl', function($scope,$state) {
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
