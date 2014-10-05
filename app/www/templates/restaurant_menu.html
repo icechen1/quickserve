@@ -1,56 +1,39 @@
 <ion-view title="-Restaurant Name- Menu">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <button class="button button-clear button-positive" ng-click="send()">Next</button>
   </ion-nav-buttons>
   <ion-content class="has-header">
       
 <div class="list">
 
+<div ng-repeat="category in menu">
   <div class="item item-icon-left item-divider">
     <i class="icon ion-coffee"></i>
-    Appetizers
+      {{category.name}}
   </div>
 
-    <div class="item">
+    <div class="item" ng-repeat="item in category.items">
         <div class="row">
             <div class="col" name="food_pic"> 
                 <img src="">
             </div>
             <div class="col" name="food_name"> 
-                Sample food name
+                {{item.name}}
             </div>
             <div class="col" name="food_price">
-                Sample Food Price
+                {{item.price}}
             </div>
             <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
+                <label><input value="0" type="number" ng-model="item.amount"></label>
+                <!--<input type="hidden" value="{{item.id}}" ng-model="order.items[id]">-->
             </div>
             <div class="col col-10" name="food_flag">
                 <a class="button button-icon icon ion-ios7-star-outline"></a>
             </div>
         </div>
     </div>
-    
-    <div class="item">
-        <div class="row">
-            <div class="col" name="food_pic"> 
-                <img src="">
-            </div>
-            <div class="col" name="food_name"> 
-                Sample food name
-            </div>
-            <div class="col" name="food_price">
-                Sample Food Price
-            </div>
-            <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
-            </div>
-            <div class="col col-10" name="food_flag">
-                <a class="button button-icon icon ion-ios7-star-outline"></a>
-            </div>
-        </div>
-    </div>
-    
+</div>
 
       
 <div class="list">
