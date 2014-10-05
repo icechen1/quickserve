@@ -2454,7 +2454,6 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  background: url('img/backtest.jpg') center;
   top: 44px; }
 
 .no-header {
@@ -4143,8 +4142,8 @@ a.subdued {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
-  background: url('img/backtest.jpg') center;
+  border-color: #eee;
+  background: #fff;
   color: #444;
   position: relative;
   z-index: 2;
@@ -4574,7 +4573,7 @@ a.item-content {
   padding-top: 8x;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #9ae4e9;
+  background-color: #eee;
   color: #222;
   font-weight: bold; }
 
@@ -5707,8 +5706,8 @@ progress {
  * --------------------------------------------------
  */
 .button {
-  border-color: #b2b2b2;
-  background-color: #f8f8f8;
+  border-color: #f8f8f8;
+  background-color: #eee;
   color: #444;
   position: relative;
   display: inline-block;
@@ -5843,8 +5842,8 @@ progress {
         color: #fff; }
   .button.button-calm {
     border-color: #1aacc3;
-    background-color: #43cee6;
-    color: #fff; }
+    background-color: #9AE4E9;
+    color: #444; }
     .button.button-calm:hover {
       color: #fff;
       text-decoration: none; }

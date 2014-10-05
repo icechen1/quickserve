@@ -1,118 +1,234 @@
-<ion-view title="-Restaurant Name- Menu">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header" style="background: url('img/backtest.jpg') center">
-      
-<div class="list">
+ Skip to content
+This repository
 
-  <div class="item item-icon-left item-divider" >
-    <i class="icon ion-fork"></i>
-    Appetizers
-  </div>
+    Explore
+    Gist
+    Blog
+    Help
 
-    <div class="item">
-        <div class="row">
-            <div class="col" name="food_pic"> 
-                <img src="">
+    Celestimon Celestimon
+
+    4
+    0
+    0
+
+icechen1/quickserve
+
+quickserve / app / www / templates / restaurant_menu.html
+Yu Chen Hou icechen1 3 hours ago
+test
+
+2 contributors
+Celestimon Yu Chen Hou
+97 lines (85 sloc) 2.925 kb
+
+<ion-view title="-Restaurant Name- Menu" >
+
+    <ion-nav-buttons side="left" >
+
+        <button
+            class="button button-icon icon ion-navicon"
+            menu-toggle="left" >
+        </button>
+
+    </ion-nav-buttons>
+
+    <ion-content class="has-header" >
+
+        <div class="list" >
+
+            <div ng-repeat="category in menu" >
+
+                <div class="item item-icon-left item-divider" >
+
+                    <i class="icon ion-coffee" >
+                    </i>
+                    {{category.name}}
+
+                </div>
+
+                <div
+                    class="item"
+                    ng-repeat="item in category.items" >
+
+                    <div class="row" >
+
+                        <div
+                            name="food_pic"
+                            class="col" >
+
+                            <img src="" >
+                            </img>
+                        </div>
+
+                        <div
+                            name="food_name"
+                            class="col" >
+                            {{item.name}}
+
+                        </div>
+
+                        <div
+                            name="food_price"
+                            class="col" >
+                            {{item.price}}
+
+                        </div>
+
+                        <div
+                            name="food_qunty"
+                            class="col col-15" >
+
+                            <label>
+
+                                <input
+                                    ng-model="item.amount"
+                                    type="number"
+                                    value="0" >
+                                </input>
+                            </label>
+                            <!-- <input type="hidden" value="{{item.id}}" ng-model="order.items[id]"> -->
+                        </div>
+
+                        <div
+                            name="food_flag"
+                            class="col col-10" >
+
+                            <a class="button button-icon icon ion-ios7-star-outline" >
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col" name="food_name"> 
-                Sample food name
+
+            <div class="list" >
+
+                <div class="item item-icon-left item-divider" >
+
+                    <i class="icon ion-knife" >
+                    </i>
+                    Entrees
+
+                </div>
+
+                <div class="item" >
+
+                    <div class="row" >
+
+                        <div
+                            name="food_pic"
+                            class="col" >
+
+                            <img src="" >
+                            </img>
+                        </div>
+
+                        <div
+                            name="food_name"
+                            class="col" >
+                            Sample food name
+
+                        </div>
+
+                        <div
+                            name="food_price"
+                            class="col" >
+                            Sample Food Price
+
+                        </div>
+
+                        <div
+                            name="food_qunty"
+                            class="col col-15" >
+
+                            <label>
+
+                                <input type="number" >
+                                </input>
+                            </label>
+                        </div>
+
+                        <div
+                            name="food_flag"
+                            class="col col-10" >
+
+                            <a class="button button-icon icon ion-ios7-star-outline" >
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col" name="food_price">
-                Sample Food Price
-            </div>
-            <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
-            </div>
-            <div class="col col-10" name="food_flag">
-                <a class="button button-icon icon ion-ios7-star-outline"></a>
+
+            <div class="list" >
+
+                <div class="item item-icon-left item-divider" >
+
+                    <i class="icon ion-icecream" >
+                    </i>
+                    Desserts
+
+                </div>
+
+                <div class="item" >
+
+                    <div class="row" >
+
+                        <div
+                            name="food_pic"
+                            class="col" >
+
+                            <img src="" >
+                            </img>
+                        </div>
+
+                        <div
+                            name="food_name"
+                            class="col" >
+                            Sample food name
+
+                        </div>
+
+                        <div
+                            name="food_price"
+                            class="col" >
+                            Sample Food Price
+
+                        </div>
+
+                        <div
+                            name="food_qunty"
+                            class="col col-15" >
+
+                            <label>
+
+                                <input type="number" >
+                                </input>
+                            </label>
+                        </div>
+
+                        <div
+                            name="food_flag"
+                            class="col col-10" >
+
+                            <a class="button button-icon icon ion-ios7-star-outline" >
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="item">
-        <div class="row">
-            <div class="col" name="food_pic"> 
-                <img src="">
-            </div>
-            <div class="col" name="food_name"> 
-                Sample food name
-            </div>
-            <div class="col" name="food_price">
-                Sample Food Price
-            </div>
-            <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
-            </div>
-            <div class="col col-10" name="food_flag">
-                <a class="button button-icon icon ion-ios7-star-outline"></a>
-            </div>
-        </div>
-    </div>
-    
+    </ion-content>
 
-      
-<div class="list">
+</ion-view>    Status
+    API
+    Training
+    Shop
+    Blog
+    About
 
-  <div class="item item-icon-left item-divider">
-    <i class="icon ion-knife"></i>
-    Entrees
-  </div>
+    © 2014 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Contact
 
-    <div class="item">
-        <div class="row">
-            <div class="col" name="food_pic"> 
-                <img src="">
-            </div>
-            <div class="col" name="food_name"> 
-                Sample food name
-            </div>
-            <div class="col" name="food_price">
-                Sample Food Price
-            </div>
-            <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
-            </div>
-            <div class="col col-10" name="food_flag">
-                <a class="button button-icon icon ion-ios7-star-outline"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-      
-<div class="list">
-    <div class="item item-icon-left item-divider">
-        <i class="icon ion-icecream"></i>
-        Desserts
-    </div>
-
-    <div class="item">
-        <div class="row">
-            <div class="col" name="food_pic"> 
-                <img src="">
-            </div>
-            <div class="col" name="food_name"> 
-                Sample food name
-            </div>
-            <div class="col" name="food_price">
-                Sample Food Price
-            </div>
-            <div class="col col-15" name="food_qunty">
-                <label> <input type="number"></label>
-            </div>
-            <div class="col col-10" name="food_flag">
-                <a class="button button-icon icon ion-ios7-star-outline"></a>
-            </div>
-        </div>
-    </div>
-
-<button class="button button-full button-calm">
-  Place Order
-</button>
-
-    
-</div>
-  </ion-content>
-</ion-view>
