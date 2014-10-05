@@ -33,7 +33,7 @@ io.on('connection', function(socket){
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
-/*
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});*/
+
+http.listen(process.env.PORT, function(){
+  console.log('listening on *: ' + process.env.PORT);
+});
