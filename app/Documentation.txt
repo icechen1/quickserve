@@ -16,6 +16,6 @@ newMenuItem -> Parameter: $POST['RestID'],$POST['itemDesc'],$POST['imageURL'],$P
 favourite -> Parameter: $POST['UserID'],$POST['token']
 		  -> Response: 
 		  -> Purpose: Adds the token into the favourite list
-favourite -> Parameter: $POST['UserID']
+getPastOrders -> Parameter: $POST['UserID']
 		  -> Response: JSON: {orderDate, ItemName, price}
 		  -> Purpose: Retrieves past orders
