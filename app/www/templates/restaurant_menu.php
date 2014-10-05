@@ -2,12 +2,12 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" style="background: url('img/backtest.jpg') center">
       
 <div class="list">
 
-  <div class="item item-icon-left item-divider">
-    <i class="icon ion-coffee"></i>
+  <div class="item item-icon-left item-divider" >
+    <i class="icon ion-fork"></i>
     Appetizers
   </div>
 
@@ -108,6 +108,11 @@
         </div>
     </div>
 
+<button class="button button-full button-calm">
+  Place Order
+</button>
+
+    
 </div>
   </ion-content>
 </ion-view>

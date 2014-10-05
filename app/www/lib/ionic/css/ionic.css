@@ -2454,6 +2454,7 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
+  background: url('img/backtest.jpg') center;
   top: 44px; }
 
 .no-header {
@@ -4143,7 +4144,7 @@ a.subdued {
  */
 .item {
   border-color: #ddd;
-  background-color: #fff;
+  background: url('img/backtest.jpg') center;
   color: #444;
   position: relative;
   z-index: 2;
@@ -4570,10 +4571,10 @@ a.item-content {
     margin-bottom: 16px; }
 
 .item-divider {
-  padding-top: 8px;
+  padding-top: 8x;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #f5f5f5;
+  background-color: #9ae4e9;
   color: #222;
   font-weight: bold; }
 
