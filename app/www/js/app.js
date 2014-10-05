@@ -90,6 +90,15 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
         }
       }
     })
+    .state('app.scanned', {
+      url: "/scanned",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/scanned.html",
+          controller: 'PlaylistsCtrl'
+        }
+      }
+    })
     .state('app.phptest', {
       url: "/phptest",
       views: {

@@ -55,7 +55,7 @@ Celestimon Yu Chen Hou
 
                         <div
                             name="food_pic"
-                            class="col" >
+                            class="col col-10" >
 
                             <img src="" >
                             </img>
@@ -63,7 +63,7 @@ Celestimon Yu Chen Hou
 
                         <div
                             name="food_name"
-                            class="col" >
+                            class="col col-50" >
                             {{item.name}}
 
                         </div>
@@ -77,7 +77,8 @@ Celestimon Yu Chen Hou
 
                         <div
                             name="food_qunty"
-                            class="col col-15" >
+                            class="col col-10"
+                            align="center">
 
                             <label>
 

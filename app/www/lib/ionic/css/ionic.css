@@ -2514,7 +2514,9 @@ ion-nav-view {
  */
 p {
   margin: 0 0 10px; }
-
+p.pos_fixed{
+    position: fixed;
+    bottom: 20px;
 small {
   font-size: 85%; }
 
