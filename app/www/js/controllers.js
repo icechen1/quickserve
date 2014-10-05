@@ -45,6 +45,9 @@ angular.module('starter.controllers', [])
       }
     );
     };
+   appSocket.on('scannedToken', function(msg){
+        alert("YAY");
+    });
 })
 
 .controller('MenuCtrl', function($scope,$state,$location,$http) {
