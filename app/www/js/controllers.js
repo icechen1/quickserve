@@ -39,15 +39,13 @@ angular.module('starter.controllers', [])
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);*/
           appSocket.emit('scanned', result.text);
+
       }, 
       function (error) {
           alert("Scanning failed: " + error);
       }
     );
     };
-   appSocket.on('scannedToken', function(msg){
-        alert("YAY");
-    });
 })
 
 .controller('MenuCtrl', function($scope,$state,$location,$http) {
@@ -106,10 +104,12 @@ angular.module('starter.controllers', [])
         });
     };
 })
-.controller('BarcodeCtrl', function($scope,$stateParams) {
+.controller('BarcodeCtrl', function($scope,$stateParams,appSocket) {
     $scope.payload = $stateParams.barcodeId;
+    $scope.$parent.appSocket.emit('onBarCode', $scope.menu);
     $scope.$parent.appSocket.on('scannedToken', function(msg){
         alert("YAY");
+        console.log("YAY");
     });
 })
 //TODO Refactor ordering into a service

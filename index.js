@@ -24,6 +24,14 @@ io.on('connection', function(socket){
         socket.emit("getToken",id);
         id++;
     });
+    socket.on('onBarCode', function(msg){
+        socket.on('scanned', function(msg){
+            console.log('scanned received'); 
+            console.log(msg); 
+            socket.emit("scannedToken",msg);
+            console.log('scannedToken emit'); 
+        });
+    });
     socket.on('scanned', function(msg){
         console.log('scanned received'); 
         console.log(msg); 
