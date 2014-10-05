@@ -52,7 +52,8 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       url: "/restaurant_menu",
       views: {
         'menuContent' :{
-          templateUrl: "templates/restaurant_menu.html"
+          templateUrl: "templates/restaurant_menu.html",
+          controller: 'MenuCtrl'
         }
       }
     })

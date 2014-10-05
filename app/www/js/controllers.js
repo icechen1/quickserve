@@ -2,7 +2,8 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   //Grab our userID
-    window.MacAddress.getMacAddress(
+    if(window.cordova)
+    cordova.plugins.MacAddress.getMacAddress(
         function(macAddress) {
             $scope.phone_id = macAddress;
             alert(phone_id);
@@ -59,8 +60,35 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('ScanRestaurantCtrl', function($scope,$state) {
-
+.controller('MenuCtrl', function($scope,$state) {
+    //placeholder
+    $scope.menu = [
+    { category: 'Category 1', 
+        items:[{
+            name: "Test"
+        },{
+            name: "Test 2"
+        },{
+            name: "Test 3"
+        }]
+    },{category: 'Category 2', 
+        items:[{
+            name: "Test"
+        },{
+            name: "Test 2"
+        },{
+            name: "Test 3"
+        }]
+    },{category: 'Category 3', 
+        items:[{
+            name: "Test"
+        },{
+            name: "Test 2"
+        },{
+            name: "Test 3"
+        }]
+    }
+  ];
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
