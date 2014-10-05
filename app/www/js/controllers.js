@@ -57,51 +57,160 @@ angular.module('starter.controllers', [])
 })
 
 .controller('MenuCtrl', function($scope,$state,$location,$http) {
-    //placeholder
-    $scope.menu = [{ name: 'Category 1', 
+    //
+    $scope.menu = [{ name: 'Breakfast', 
         items:[{
-            name: "Test",
-            price: "160$",
+            name: "Egg & Cheese	3-inch Flatbread",
+            price: "$2.25",
             id: 123213
         },{
-            name: "Test 2",
-            price: "100$",
+            name: "Egg & Cheese	6-inch Flatbread or Subs",
+            price: "$3.50",
             id: 123212
         },{
-            name: "Test 3",
-            price: "100$",
+            name: "Egg & Cheese	12-inch Flatbread or Subs",
+            price: "$5.00",
             id: 123214
+        },{
+            name: "Black Forrest Ham, Egg & Cheese	6-inch Flatbread or Subs",
+            price: "$3.75",
+            id: 123215,
+        },{
+            name: "Bacon, Egg & Cheese	6-inch Flatbread or Subs",
+            price: "$3.75",
+            id: 123215,
+        },{
+            name: "Steak, Egg & Cheese	6-inch Flatbread or Subs	",
+            price: "$4.00",
+            id: 123215,
+        },{
+            name: "Sausage, Egg & Cheese	6-inch Flatbread or Subs	",
+            price: "$4.00",
+            id: 123215,
         }]
-    },{name: 'Category 2', 
+    },{name: 'Chopped Salads', 
         items:[{
-            name: "Test",
-            price: "100$",
+            name: "Double Chicken",
+            price: "$7.00",
             id: 223213
         },{
-            name: "Test 2",
-            price: "100$",
+            name: "Turkey Breast",
+            price: "$6.00",
             id: 223212
         },{
-            name: "Test 3",
-            price: "100$",
+            name: "Veggie Delite",
+            price: "$5.00",
             id: 223210
         }]
-    },{name: 'Category 3', 
+    },{name: 'Footlongs', 
         items:[{
-            name: "Test",
-            price: "100$",
+            name: "B.L.T.",
+            price: "$5.00",
             id: 323213
         },{
-            name: "Test 2",
-            price: "100$",
+            name: "Black Forest Ham",
+            price: "$5.25",
             id: 323216
         },{
-            name: "Test 3",
-            price: "100$",
+            name: "Cold Cut Combo",
+            price: "$5.25",
+            id: 323211
+        },{
+            name: "Egg & Cheese Omelet",
+            price: "$5.00",
+            id: 323211
+        },{
+            name: "Veggie Delite",
+            price: "$5.00",
+            id: 323211
+        },{
+            name: "Spicy Italian",
+            price: "$5.75",
+            id: 323211
+        },{
+            name: "Meatball Marinara",
+            price: "$6.25",
+            id: 323211
+        },{
+            name: "Oven Roasted Chicken",
+            price: "$6.00",
+            id: 323211
+        },{
+            name: "Subway Seafood Sensation",
+            price: "$6.00",
+            id: 323211
+        },{
+            name: "Tuna",
+            price: "$6.50",
+            id: 323211
+        },{
+            name: "Buffalo Chicken",
+            price: "$7.25",
+            id: 323211
+        },{
+            name: "Sweet Onion Chicken Teriyaki",
+            price: "$7.25",
+            id: 323211
+        },{
+            name: "Chicken & Bacon Ranch Melt",
+            price: "$7.50",
             id: 323211
         }]
-    }
-     ];
+    },{name: '6-inch', 
+        items:[{
+            name: "B.L.T.",
+            price: "$3.50",
+            id: 323213
+        },{
+            name: "Black Forest Ham",
+            price: "$3.50",
+            id: 323216
+        },{
+            name: "Cold Cut Combo",
+            price: "$3.50",
+            id: 323211
+        },{
+            name: "Egg & Cheese Omelet",
+            price: "$3.50",
+            id: 323211
+        },{
+            name: "Veggie Delite",
+            price: "$3.50",
+            id: 323211
+        },{
+            name: "Spicy Italian",
+            price: "$3.75",
+            id: 323211
+        },{
+            name: "Meatball Marinara",
+            price: "$4.00",
+            id: 323211
+        },{
+            name: "Oven Roasted Chicken",
+            price: "$4.00",
+            id: 323211
+        },{
+            name: "Subway Seafood Sensation",
+            price: "$4.00",
+            id: 323211
+        },{
+            name: "Tuna",
+            price: "$4.25",
+            id: 323211
+        },{
+            name: "Buffalo Chicken",
+            price: "$4s.50",
+            id: 323211
+        },{
+            name: "Sweet Onion Chicken Teriyaki",
+            price: "$4.50",
+            id: 323211
+        },{
+            name: "Chicken & Bacon Ranch Melt",
+            price: "$4.75",
+            id: 323211
+        }]
+    }];
     
     //Post the order to the server
     $scope.send = function(){
