@@ -1,5 +1,5 @@
 <?php
-	$link=parse_url(getenv("CLEARDB_DATABASE_URL"));
+	/*$link=parse_url(getenv("CLEARDB_DATABASE_URL"));
 	header('Acess-Control-Allow-Origin: *');
     $server = $url["host"];
     $username = $url["user"];
@@ -13,14 +13,14 @@
 	$userID=$_POST['userID'];
 	
 	
-	$date=time();
+	$date=time();*/
 	
 	$t=mysqli_query($link,"SELECT Max(OrderID)+1 FROM orders");
-	foreach($data)
+	/*foreach($data)
 	{
 		mysqli_query($link,"INSERT INTO orders('OrderDate','ItemID','UserID','isComplete') VALUES (".$date.",".$data['key'].",".$userID.","."0".")");
 		mysqli_query($link,"UPDATE orders SET Barcode= ".$t." FROM orders)");
-	}
+	}*/
 	echo $t;
 	
 ?>
