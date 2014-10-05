@@ -24,6 +24,9 @@ io.on('connection', function(socket){
         socket.emit("scannedToken",msg);
     });
 });
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
 /*
 http.listen(3000, function(){
   console.log('listening on *:3000');
