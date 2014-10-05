@@ -29,10 +29,10 @@ io.on('connection', function(socket){
         console.log(msg); 
         socket.emit("scannedToken",msg);
     });
-});
+}); /*
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
-})
+}) */
 
 http.listen(process.env.PORT, function(){
   console.log('listening on *: ' + process.env.PORT);
