@@ -17,5 +17,5 @@
 	$ItemName=$_POST['ItemName'];
 	$Price=$_POST['Price'];
 	
-	$menu=mysqli_query($link,"INSERT INTO Items (ItemDescription,  ImageURL,  CategoryID,  ItemName,  Price) VALUES (".$ItemDescription.",".$ImageURL."," . $CategoryID."," .$ItemName.",". $Price.")");
+	$menu=mysqli_query($url,"INSERT INTO Items (ItemDescription,  ImageURL,  CategoryID,  ItemName,  Price) VALUES (".$ItemDescription.",".$ImageURL."," . $CategoryID."," .$ItemName.",". $Price.")");
 ?>
