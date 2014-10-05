@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,appSocket) {
   //Grab our userID
   try{
     $scope.phoneID = device.uuid;
@@ -32,11 +32,12 @@ angular.module('starter.controllers', [])
     //Scan QR Code to get to restaurant page
     cordova.plugins.barcodeScanner.scan(
       function (result) {
-          //QR Code found... check for validity
+          /*QR Code found... check for validity
           alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
+                "Cancelled: " + result.cancelled);*/
+          appSocket.emit('scanned', result.text);
       }, 
       function (error) {
           alert("Scanning failed: " + error);
@@ -45,18 +46,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('MenuCtrl', function($scope,$state,$location,$http) {
+.controller('MenuCtrl', function($scope,$state,$location,$http,appSocket) {
     //placeholder
     $scope.menu = [{ name: 'Category 1', 
         items:[{
@@ -106,10 +96,17 @@ angular.module('starter.controllers', [])
     //Post the order to the server
     $scope.send = function(){
         console.log($scope.menu);
-        $http.get('http://quickserve.herokuapp.com/generate_token.php', $scope.order).success(function(data, status, headers, config){
-                $location.url("/barcode/"+data);
+        appSocket.emit('sendMenu', $scope.menu);
+        appSocket.on('getToken', function(msg){
+            $location.url("/app/barcode/"+msg);
         });
     };
+})
+.controller('BarcodeCtrl', function($scope,$stateParams) {
+    $scope.payload = $stateParams.barcodeId;
+    appSocket.on('scanned', function(msg){
+        alert("YAY");
+    });
 })
 //TODO Refactor ordering into a service
 .service('orderService', function() {

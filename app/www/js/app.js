@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
+angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode','btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -74,10 +74,11 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       }
     })
     .state('app.barcode', {
-      url: "/barcode",
+      url: "/barcode/:barcodeId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/barcode.html"
+          templateUrl: "templates/barcode.html",
+          controller: 'BarcodeCtrl'
         }
       }
     })
@@ -86,15 +87,6 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       views: {
         'menuContent' :{
           templateUrl: "templates/history.php",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-    .state('app.phptest', {
-      url: "/phptest",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/phptest.php",
           controller: 'PlaylistsCtrl'
         }
       }
@@ -111,5 +103,20 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/nearby');
-});
 
+}).factory('appSocket', function (socketFactory) {
+      var myIoSocket = io.connect('localhost:3000');
+
+      appSocket = socketFactory({
+        ioSocket: myIoSocket
+      });
+        return appSocket;
+    });
+
+document.addEventListener('deviceready', function() {
+    socket.on('connect', function() {
+      socket.on('text', function(text) {
+        alert(text);
+       });
+     });
+});
