@@ -15,12 +15,13 @@
 	
 	$date=time();*/
 	
-	$t=mysqli_query($link,"SELECT Max(OrderID)+1 FROM orders");
+	//$t=mysqli_query($link,"SELECT Max(OrderID)+1 FROM orders");
 	/*foreach($data)
 	{
 		mysqli_query($link,"INSERT INTO orders('OrderDate','ItemID','UserID','isComplete') VALUES (".$date.",".$data['key'].",".$userID.","."0".")");
 		mysqli_query($link,"UPDATE orders SET Barcode= ".$t." FROM orders)");
 	}*/
-	echo $t;
+	echo 1;
+	//echo $t;
 	
 ?>
