@@ -18,14 +18,28 @@
 </div>
       
 <div class="list">
+
   <div class="item item-icon-left item-divider">
-    <i class="icon ion-pizza"></i>
-    Orders
+    <i class="icon ion-wineglass"></i>
+    Restaurants
   </div>
+
+    <a class="item" href="#">
+        Insert recent restaruants here.
+    </a>
+    
+</div>
+      
+<div class="list">
+    <div class="item item-icon-left item-divider">
+        <i class="icon ion-pizza"></i>
+        Orders
+    </div>
+
     <a class="item" href="#">
         Insert recent orders here.
     </a>
-</div>
 
+</div>
   </ion-content>
 </ion-view>

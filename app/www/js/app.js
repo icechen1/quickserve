@@ -84,7 +84,7 @@ angular.module('starter', ['ionic', 'starter.controllers','monospaced.qrcode'])
       url: "/history",
       views: {
         'menuContent' :{
-          templateUrl: "templates/history.html",
+          templateUrl: "templates/history.php",
           controller: 'PlaylistsCtrl'
         }
       }

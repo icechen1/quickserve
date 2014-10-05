@@ -3,7 +3,7 @@
 	
 	$userID=$_POST['userID'];
 	
-	$r=mysqli_query($link,"SELECT orders.orderDate, items.ItemName, orders.price FROM orders INNER JOIN items ON items.ItemID=orders.ItemID WHERE orders.UserID=".$userID);
+	$r=mysqli_query($link,"SELECT orders.orderDate, items.ItemName, orders.price FROM orders INNER JOIN items ON order_items.orderID=orders.orderID INNER JOIN items ON order_items.itemID=items.orderID WHERE orders.UserID=".$userID);
 	$i=0;
 	while($row = mysqli_fetch_array($r)) {
 		$ItemName[$i]=$row['ItemName'];
