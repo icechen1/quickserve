@@ -13,7 +13,7 @@
 	$userID=$_GET['userID'];
 	
 	
-	$date=time();*/
+	$date=time();
 	
 	$t=mysqli_query($link,"SELECT Max(OrderID)+1 FROM orders");
 	foreach($data)
