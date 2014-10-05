@@ -2,7 +2,7 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header" style="background: url('img/backtest.jpg') center">
+  <ion-content class="has-header">
       
 <div class="list">
 
